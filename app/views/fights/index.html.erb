@@ -1,0 +1,11 @@
+<h1>Proximas lutas</h1>
+
+<ul>
+  <% @fights.each do |fight| %>
+    <li>
+    <%= fight.contender%> <br/>
+      VS <br/>
+      <%= fight.challenger%> <br/>
+    </li>
+  <% end %>
+</ul>
