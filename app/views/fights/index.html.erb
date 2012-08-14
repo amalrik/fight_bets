@@ -1,11 +1,19 @@
 <h1>Proximas lutas</h1>
 
-<ul>
+<table>
+  <tr>
+    <th>Categoria</th>
+    <th>Red Corner</th>
+    <th>   </th>
+    <th>Blue Corner</th>
+  </tr>
   <% @fights.each do |fight| %>
-    <li>
-    <%= fight.contender%> <br/>
-      VS <br/>
-      <%= fight.challenger%> <br/>
-    </li>
+  <tr>
+    <td><%= fight.category  %> </td>
+    <td><%= fight.contender %> </td>
+    <td> VS </td>
+    <td><%= fight.challenger%> </td>
+  </tr>
   <% end %>
-</ul>
+</table>
+
