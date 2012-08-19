@@ -16,4 +16,5 @@ class FightsController < ApplicationController
 
     redirect_to fights_path
   end
+
 end

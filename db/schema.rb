@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120818155108) do
+ActiveRecord::Schema.define(:version => 20120819000001) do
 
   create_table "fights", :force => true do |t|
     t.string   "contender",  :null => false
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20120818155108) do
     t.integer  "round"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "fight_id"
   end
 
 end
