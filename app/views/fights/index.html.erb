@@ -17,4 +17,16 @@
   <% end %>
 </table>
 
+<h3>Lutas Passadas</h3>
+<table>
+  <tr>
+    <th>Categoria</th>
+    <th>Red Corner</th>
+    <th>   </th>
+    <th>Blue Corner</th>
+    <th>Método</th>
+    <th>Round</th>
+  </tr>
+  <%= render :partial => 'past_fights', :collection => all_past_fights(@fights) %>
+</table>
 
