@@ -1,0 +1,24 @@
+<%
+  categorias_array = [['mosca','Mosca'],['galo','Galo'],['pena', 'Pena'],['leve', 'Leve'],['meio médio', 'Meio Médio'],['médio','Médio'],['meio pesado','Meio Pesado'], ['pesado','Pesado']]
+%>
+<h3>Cadastrar nova luta</h3>
+
+<%= form_for(@fight) do |f| %>
+  <%= f.hidden_field :event_id %>
+  <p>
+  <%= f.label :categoria%>
+  <%= f.select(:category, categorias_array ) %> 
+  </p>
+  <p>
+    <%= f.label :red_corner %>
+    <%= f.text_field :contender %>
+  </p>
+  <p>
+    <%= f.label :blue_corner %>
+    <%= f.text_field :challenger %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

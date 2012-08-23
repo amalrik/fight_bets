@@ -1,4 +1,4 @@
-<h1>Proximas lutas</h1>
+<h1>Lutas Previstas</h1>
 
 <table>
   <tr>
@@ -10,9 +10,11 @@
   <% @event.fights.each do |fight| %>
   <tr>
     <td><%= fight.category  %> </td>
-    <td><%= radio_button_tag(:"winner_bet_#{fight.id}", "contender bet") %><%= fight.contender %> </td>
+    <td><%= fight.contender %> </td>
     <td> VS </td>
-    <td><%= radio_button_tag(:"winner_bet_#{fight.id}", "challenger bet") %><%= fight.challenger%> </td>
+    <td><%= fight.challenger%> </td>
   </tr>
   <% end %>
 </table>
+
+<%= render :partial => "fight_form" %>
