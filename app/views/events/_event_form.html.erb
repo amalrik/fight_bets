@@ -1,0 +1,13 @@
+
+<%= form_for(@event) do |f| %>
+  <p>
+    <%= f.label :title%>
+    <%= f.text_field :title %> 
+  </p>
+  <p>
+    <%= select_date Date.today, :prefix => :start_date %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

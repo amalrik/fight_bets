@@ -4,6 +4,23 @@
   <% @events.each do |event| %>
     <li>
       <%= link_to event.title, event_path(event) %>
+
+      <table>
+        <tr>
+          <th>Categoria</th>
+          <th>Red Corner</th>
+          <th>   </th>
+          <th>Blue Corner</th>
+        </tr>
+        <% event.fights.each do |fight| %>
+        <tr>
+          <td><%= fight.category  %> </td>
+          <td><%= radio_button_tag(:"winner_bet_#{fight.id}", "contender bet") %><%= fight.contender %> </td>
+          <td> VS </td>
+          <td><%= radio_button_tag(:"winner_bet_#{fight.id}", "challenger bet") %><%= fight.challenger%> </td>
+        </tr>
+        <% end %>
+      </table>
     </li>
   <% end %>
 </ul>

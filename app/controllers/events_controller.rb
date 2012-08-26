@@ -14,5 +14,11 @@ class EventsController < ApplicationController
   end
 
   def create
+    #raise params.inspect
+    @event = Event.new
+    @event.title = params[:event][:title]
+    @event.when = Date.parse("#{params[:start_date][:day]} #{params[:start_date][:month]} #{params[:start_date][:year]}")
+    @event.save
+    redirect_to event_path(@event)
   end
 end
