@@ -1,3 +1,6 @@
 class Bet < ActiveRecord::Base
-  attr_accessible :fight_id, :user_id, :winner
+  attr_accessible :winner
+
+  belongs_to :user
+  has_one :fight
 end
