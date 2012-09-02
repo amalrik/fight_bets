@@ -21,7 +21,7 @@
         </tr>
         <% end %>
       </table>
-      <%= button_to "Apostar", :action => "create" %>
+      <%= link_to "Apostar", bets_path, :method => :post %>
     </li>
   <% end %>
 </ul>
