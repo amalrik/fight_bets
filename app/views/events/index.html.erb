@@ -1,29 +1,18 @@
 <h1>todos eventos</h1>
 
 <ul>
-  <% @events.each do |event| %>
-    <li>
-      <%= link_to event.title, event_path(event) %>
+  <li>
 
-      <table>
-        <tr>
-          <th>Categoria</th>
-          <th>Red Corner</th>
-          <th>   </th>
-          <th>Blue Corner</th>
-        </tr>
-        <% event.fights.each do |fight| %>
-        <tr>
-          <td><%= fight.category  %> </td>
-          <td><%= radio_button_tag(:"winner_bet_#{fight.id}", "contender bet") %><%= fight.contender %> </td>
-          <td> VS </td>
-          <td><%= radio_button_tag(:"winner_bet_#{fight.id}", "challenger bet") %><%= fight.challenger%> </td>
-        </tr>
-        <% end %>
-      </table>
-      <%= link_to "Apostar", bets_path, :method => :post %>
-    </li>
-  <% end %>
+    <table>
+      <tr>
+        <th>Categoria</th>
+        <th>Red Corner</th>
+        <th>   </th>
+        <th>Blue Corner</th>
+      </tr>
+    </table>
+    <%= render :partial => "event", :collection => @events %>
+  </li>
 </ul>
 
 <%= link_to "cadastrar evento", new_event_path %>

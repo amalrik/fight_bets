@@ -1,0 +1,22 @@
+<div class="event">
+    <li>
+      <%= link_to event.title, event_path(event) %>
+
+      <table>
+        <%= form_for @bet do |f| -%>
+          
+          <% event.fights.each do |fight| %>
+          <tr>
+            <td><%= fight.category  %> </td>
+            <td><%= f.radio_button(:winner, fight.contender) %><%= fight.contender %> </td>
+            <td> VS </td>
+            <td><%= f.radio_button(:winner, fight.challenger) %><%= fight.challenger%> </td>
+          </tr>
+          <% end %>
+          <tr>
+            <td><%= f.submit 'Apostar' %> </td>
+          </tr>
+        <% end -%>
+      </table>
+    </li>
+</div>

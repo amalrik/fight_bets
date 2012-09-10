@@ -4,4 +4,5 @@ class Fight < ActiveRecord::Base
   has_one :result
   belongs_to :event
   has_many :bets
+
 end
