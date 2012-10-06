@@ -1,7 +1,9 @@
 class EventsController < ApplicationController
+  before_filter :require_login, :except => [:new, :create]
   def index
     @events = Event.all
     @bet = Bet.new
+    @bet.user_id = current_user.id
   end
 
   def show

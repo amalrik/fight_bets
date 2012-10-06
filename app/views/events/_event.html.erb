@@ -3,18 +3,19 @@
       <%= link_to event.title, event_path(event) %>
 
       <table>
-        <%= form_for @bet do |f| -%>
+      <%= form_tag(:controller => "bets", :action => "create") do -%>
           
+	  <%= hidden_field_tag(:user_id, @bet.user_id) %>
           <% event.fights.each do |fight| %>
           <tr>
             <td><%= fight.category  %> </td>
-            <td><%= f.radio_button(:winner, fight.contender) %><%= fight.contender %> </td>
+	    <td><%= radio_button_tag(fight.id.to_s.to_sym, fight.contender) %><%= fight.contender %> </td>
             <td> VS </td>
-            <td><%= f.radio_button(:winner, fight.challenger) %><%= fight.challenger%> </td>
+	    <td><%= radio_button_tag(fight.id.to_s.to_sym, fight.challenger) %><%= fight.challenger%> </td>
           </tr>
           <% end %>
           <tr>
-            <td><%= f.submit 'Apostar' %> </td>
+            <td><%= submit_tag 'Apostar' %> </td>
           </tr>
         <% end -%>
       </table>
