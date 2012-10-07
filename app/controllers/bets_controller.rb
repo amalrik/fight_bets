@@ -8,12 +8,16 @@ class BetsController < ApplicationController
         
         @bet = Bet.new
         @bet.user_id = params[:user_id]
+        @bet.fight_id = key.to_i
 	      @bet.winner = value
-	      if @bet.save
-          redirect_to(:events, :message => 'Aposta realizada!')
-	      end
+	      @bet.save
       end
     end
+    redirect_to bet_path(@bet)
+  end
+
+  def show
+    @bets = Bet.all
   end
 
 end

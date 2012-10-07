@@ -1,0 +1,10 @@
+<h1>Aposta criada</h1>
+
+<ul>
+  <% @bets.each do |bet| %>
+  <li>
+    <%= bet.fight.contender %> VS <%= bet.fight.challenger %> <br/>
+    vencedor: <%= bet.winner %>
+  </li>  
+  <%end%>
+</ul>
