@@ -10,7 +10,26 @@
   <%= @user.email %>
 </p>
 
-
+<p>
+  <b>Proximas Apostas:</b> <br/>
+  
+<table>
+  <tr>
+    <th>Categoria</th>
+    <th>Red Corner</th>
+    <th>   </th>
+    <th>Blue Corner</th>
+  </tr>
+  <% @future_bets.each do |f| %>
+  <tr>
+    <td><%= f.fight.category  %> </td>
+    <td><%= f.fight.contender %> </td>
+    <td> VS </td>
+    <td><%= f.fight.challenger%> </td>
+  </tr>
+  <% end %>
+</table>
+</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

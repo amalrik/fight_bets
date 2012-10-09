@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @future_bets = @user.bets.select{|b| b.fight.result == nil}
 
     respond_to do |format|
       format.html # show.html.erb
