@@ -19,13 +19,37 @@
     <th>Red Corner</th>
     <th>   </th>
     <th>Blue Corner</th>
+    <th><b>Aposta</b></th>
   </tr>
-  <% @future_bets.each do |f| %>
+  <% @future_bets.each do |fb| %>
   <tr>
-    <td><%= f.fight.category  %> </td>
-    <td><%= f.fight.contender %> </td>
+    <td><%= fb.fight.category  %> </td>
+    <td><%= fb.fight.contender %> </td>
     <td> VS </td>
-    <td><%= f.fight.challenger%> </td>
+    <td><%= fb.fight.challenger%> </td>
+    <td><b><%= fb.winner%> </b></td>
+  </tr>
+  <% end %>
+</table>
+</p>
+<p>
+  <b>Ultimas Apostas:</b> <br/>
+  
+<table>
+  <tr>
+    <th>Categoria</th>
+    <th>Red Corner</th>
+    <th>   </th>
+    <th>Blue Corner</th>
+    <th>Aposta?</th>
+  </tr>
+  <% @past_bets.each do |pb| %>
+  <tr>
+    <td><%= pb.fight.category  %> </td>
+    <td><%= pb.fight.contender %> </td>
+    <td> VS </td>
+    <td><%= pb.fight.challenger%> </td>
+    <td><%= bet_won(pb, pb.fight)%> </td>
   </tr>
   <% end %>
 </table>

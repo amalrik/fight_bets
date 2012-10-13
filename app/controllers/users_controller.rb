@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @future_bets = @user.bets.select{|b| b.fight.result == nil}
+    @past_bets   = @user.bets.select{|b| b.fight.result != nil}
 
     respond_to do |format|
       format.html # show.html.erb
