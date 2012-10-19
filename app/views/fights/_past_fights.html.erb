@@ -1,9 +1,10 @@
-<div class="past_fight">
+<div class="fight">
   <tr>
     <td><%= past_fights.category  %> </td>
     <td><%= past_fights.contender %> </td>
-    <td> venceu </td>
+    <td> vs </td>
     <td><%= past_fights.challenger%> </td>
+    <td><b><%= past_fights.result.winner%> </b></td>
     <td><%= past_fights.result.method %> </td>
     <td><%= past_fights.result.round %> </td>
   </tr>

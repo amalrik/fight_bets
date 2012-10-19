@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_filter :require_login, :except => [:new, :create]
+  before_filter :require_login, :except => [:index, :show]
   def index
     @events = Event.all
     @bet = Bet.new

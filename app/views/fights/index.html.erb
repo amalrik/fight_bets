@@ -10,9 +10,9 @@
   <% all_future_fights(@fights).each do |fight| %>
   <tr>
     <td><%= fight.category  %> </td>
-    <td><%= radio_button_tag(:"winner_bet_#{fight.id}", "contender bet") %><%= fight.contender %> </td>
+    <td><%= fight.contender %> </td>
     <td> VS </td>
-    <td><%= radio_button_tag(:"winner_bet_#{fight.id}", "challenger bet") %><%= fight.challenger%> </td>
+    <td><%= fight.challenger%> </td>
   </tr>
   <% end %>
 </table>
@@ -24,6 +24,7 @@
     <th>Red Corner</th>
     <th>   </th>
     <th>Blue Corner</th>
+    <th><b>Vencedor</b></th>
     <th>Método</th>
     <th>Round</th>
   </tr>
