@@ -27,4 +27,12 @@ class FightsController < ApplicationController
    # redirect_to fights_path
   end
 
+  def destroy
+    @fight = Fight.find(params[:id])
+    @fight.destroy
+
+    respond_to do |format|
+      format.html { redirect_to fights_url }
+    end
+  end
 end

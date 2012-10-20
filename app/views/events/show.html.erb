@@ -16,6 +16,12 @@
     <td><%= fight.contender %> </td>
     <td> VS </td>
     <td><%= fight.challenger%> </td>
+    <td>
+   
+      <%= link_to 'Remover Luta', fight,
+                    :confirm => 'Apagar Luta, tem certeza?',
+                    :method => :delete %> 
+    </td>
   </tr>
   <% end %>
 </table>
