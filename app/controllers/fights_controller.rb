@@ -1,5 +1,6 @@
 class FightsController < ApplicationController
   def index
+    @events = Event.all
     @fights = Fight.all
   end
 

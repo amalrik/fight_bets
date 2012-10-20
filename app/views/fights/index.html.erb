@@ -7,13 +7,18 @@
     <th>   </th>
     <th>Blue Corner</th>
   </tr>
-  <% all_future_fights(@fights).each do |fight| %>
-  <tr>
-    <td><%= fight.category  %> </td>
-    <td><%= fight.contender %> </td>
-    <td> VS </td>
-    <td><%= fight.challenger%> </td>
-  </tr>
+  <% @events.each do |event| %>
+    <tr>
+      <td><%= link_to event.title, event_path(event) %> </td>
+    </tr>
+        <% all_future_fights(event.fights).each do |fight| %>
+        <tr>
+          <td><%= fight.category  %> </td>
+          <td><%= fight.contender %> </td>
+          <td> VS </td>
+          <td><%= fight.challenger%> </td>
+        </tr>
+        <% end %>
   <% end %>
 </table>
 
