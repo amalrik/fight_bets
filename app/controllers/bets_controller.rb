@@ -1,7 +1,6 @@
 class BetsController < ApplicationController
 
   def create
-   #raise params.inspect
     params.each do |key, value|
       #se a chave for um numero 
       if key.to_i.to_s == key
@@ -13,7 +12,7 @@ class BetsController < ApplicationController
 	      @bet.save
       end
     end
-    redirect_to bet_path(@bet)
+    redirect_back_to bet_path(@bet)
   end
 
   def show

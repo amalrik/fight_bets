@@ -5,13 +5,13 @@
       <table>
       <%= form_tag(:controller => "bets", :action => "create") do -%>
           
-	  <%= hidden_field_tag(:user_id, @bet.user_id) %>
-          <% event.fights.each do |fight| %>
+        <%= hidden_field_tag(:user_id, @bet.user_id) %>
+          <% non_betted_fights(event, @bet.user_id).each do |fight| %>
           <tr>
             <td><%= fight.category  %> </td>
-	    <td><%= radio_button_tag(fight.id.to_s.to_sym, fight.contender) %><%= fight.contender %> </td>
+            <td><%= radio_button_tag(fight.id.to_s.to_sym, fight.contender) %><%= fight.contender %> </td>
             <td> VS </td>
-	    <td><%= radio_button_tag(fight.id.to_s.to_sym, fight.challenger) %><%= fight.challenger%> </td>
+            <td><%= radio_button_tag(fight.id.to_s.to_sym, fight.challenger) %><%= fight.challenger%> </td>
           </tr>
           <% end %>
           <tr>
