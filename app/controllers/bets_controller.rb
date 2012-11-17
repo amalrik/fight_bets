@@ -12,7 +12,7 @@ class BetsController < ApplicationController
 	      @bet.save
       end
     end
-    redirect_back_to bet_path(@bet)
+    redirect_to user_url(params[:user_id])
   end
 
   def show
