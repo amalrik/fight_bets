@@ -1,6 +1,6 @@
 <div class="event">
     <li>
-      <%= link_to event.title, event_path(event) %>
+    <%= link_to event.title, event_path(event) if non_betted_fights(event, @bet.user_id).size > 0 %>
 
       <table>
       <%= form_tag(:controller => "bets", :action => "create") do -%>
@@ -15,7 +15,7 @@
           </tr>
           <% end %>
           <tr>
-            <td><%= submit_tag 'Apostar' %> </td>
+            <td><%= submit_tag 'Apostar' if non_betted_fights(event, @bet.user_id).size > 0 %> </td>
           </tr>
         <% end -%>
       </table>
