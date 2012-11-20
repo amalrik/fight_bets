@@ -2,7 +2,7 @@ class BetsController < ApplicationController
 
   def create
     params.each do |key, value|
-      #se a chave for um numero 
+      #se a chave for um numero, fazemos isso para pegar as apostas vindas dos radio buttons na view 
       if key.to_i.to_s == key
         
         @bet = Bet.new
