@@ -9,7 +9,7 @@
   </tr>
   <% @events.each do |event| %>
     <tr>
-      <td><%= link_to event.title, event_path(event) %> </td>
+      <td><%= link_to event.title, event_path(event) if all_future_fights(event.fights).size > 0 %> </td>
     </tr>
         <% all_future_fights(event.fights).each do |fight| %>
         <tr>
