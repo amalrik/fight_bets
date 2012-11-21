@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
+  before_filter :require_login, :except => [:new, :create]
   # GET /users
   # GET /users.json
   def index
-    before_filter :require_login, :except => [:new, :create]
     @users = User.all
 
     respond_to do |format|
