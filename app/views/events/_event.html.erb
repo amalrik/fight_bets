@@ -1,12 +1,12 @@
 <div class="event">
     <li>
-    <%= link_to event.title, event_path(event) if non_betted_fights(event, @bet.user_id).size > 0 %>
+    <%= link_to event.title, event_path(event) if avaliable_fights(event, @bet.user_id).size > 0 %>
 
       <table>
       <%= form_tag(:controller => "bets", :action => "create") do -%>
           
         <%= hidden_field_tag(:user_id, @bet.user_id) %>
-          <% non_betted_fights(event, @bet.user_id).each do |fight| %>
+          <% avaliable_fights(event, @bet.user_id).each do |fight| %>
           <tr>
             <td><%= fight.category  %> </td>
             <td><%= radio_button_tag(fight.id.to_s.to_sym, fight.contender) %><%= fight.contender %> </td>
@@ -15,7 +15,7 @@
           </tr>
           <% end %>
           <tr>
-            <td><%= submit_tag 'Apostar' if non_betted_fights(event, @bet.user_id).size > 0 %> </td>
+            <td><%= submit_tag 'Apostar' if avaliable_fights(event, @bet.user_id).size > 0 %> </td>
           </tr>
         <% end -%>
       </table>
