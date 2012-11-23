@@ -34,4 +34,7 @@ FightBets::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  #action mailler
+  config.action_mailer.delivery_method = :smtp
 end
