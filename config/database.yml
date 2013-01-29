@@ -22,14 +22,5 @@ test:
   adapter: postgresql
   encoding: utf8 
   database: fight_bets_test
-  pool: 5
-  username: fight_bets
-  password: maça
-
-production:
-  adapter: postgresql
-  encoding: utf8 
-  database: fight_bets_production
-  pool: 5
-  username: fight_bets
-  password: maça
+  template: template0
+  host: localhost
