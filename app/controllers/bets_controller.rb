@@ -15,6 +15,12 @@ class BetsController < ApplicationController
     redirect_to user_url(params[:user_id])
   end
 
+  def new(args)
+    @user = args[:user]
+    @fight = args[:fight]
+    @winner = args[:winner]
+  end
+
   def show
     @bets = Bet.all
   end
