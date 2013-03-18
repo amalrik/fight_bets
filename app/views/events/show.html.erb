@@ -18,12 +18,16 @@
     <td><%= fight.challenger%> </td>
     <td>
    
+      <% if logged_in? %>
       <%= link_to 'Remover Luta', fight,
                     :confirm => 'Apagar Luta, tem certeza?',
                     :method => :delete %> 
+      <% end %>
     </td>
   </tr>
   <% end %>
 </table>
 
-<%= render :partial => "fight_form" %>
+<% if logged_in? %>
+  <%= render :partial => "fight_form" %>
+<% end %>
