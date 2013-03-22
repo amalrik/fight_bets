@@ -83,4 +83,8 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def current_user
+    @user
+  end
 end

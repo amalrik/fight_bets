@@ -14,5 +14,6 @@
     <%= render :partial => "event", :collection => @events %>
   </li>
 </ul>
-
-<%= link_to "cadastrar evento", new_event_path %>
+<% if can? :update, @events %>
+  <%= link_to "cadastrar evento", new_event_path %>
+<% end %>

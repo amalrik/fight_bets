@@ -9,4 +9,6 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
 
   has_many :bets
+  ROLES = %w[admin player banned]
+
 end

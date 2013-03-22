@@ -4,6 +4,7 @@ gem 'rails', '3.2.8'
 
 gem "pg", "~> 0.14.1"
 gem "sorcery", "~> 0.7.13"
+gem "cancan", "~> 1.6.9"
 
 # Gems used only for assets and not required
 # in production environments by default.
