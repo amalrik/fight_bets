@@ -13,7 +13,7 @@
   <%= yield %>
 
   <h6>
-    <% if logged_in? %>
+    <% if logged_in? && current_user.username %>
       <%= "Você está logado como #{current_user.username}" %>
       <%= link_to "(logout)", logout_path %>
     <% else %>

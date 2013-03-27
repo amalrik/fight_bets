@@ -44,6 +44,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
+    @user.role = 'player' #por enquanto por seguranca todos serao players
 
     respond_to do |format|
       if @user.save

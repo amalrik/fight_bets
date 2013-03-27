@@ -2,8 +2,8 @@ class FightsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @events = Event.all
-    @fights = Fight.all
+    @events = Event.includes(:fights).all
+    @fights = Fight.includes(:result).all
   end
 
   def new
