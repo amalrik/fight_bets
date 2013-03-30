@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    @event = Event.includes(:fights).find(params[:id])
     @fight = Fight.new
     @fight.event_id = @event.id
   end
