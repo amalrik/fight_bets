@@ -1,5 +1,8 @@
 <h1>Proximas lutas</h1>
 
+<% if logged_in? %>
+  <%= link_to "Pronto para apostar?", events_path %> 
+<% end %>
 <table>
   <tr>
     <th>Categoria</th>
