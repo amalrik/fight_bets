@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   load_and_authorize_resource
 
-  before_filter :require_login, :except => [:index, :show]
+  before_filter :require_login, :except => [:show]
   def index
     @events = Event.all
     if logged_in?
