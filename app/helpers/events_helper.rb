@@ -7,14 +7,12 @@ module EventsHelper
     list
    end 
 
-  def avaliable_fights(event, current_user_id)
+  def avaliable_fights(fights, current_user_bets)
     list = []
-    event.fights.each do |fight|
-      if !fight.result
-        list <<  fight unless fight.bets.exists?(:user_id => current_user_id)
-      end
-    end
-    list
+    current_user_bets.each do |bet|
+      list << bet.fight
+    end  
+    fights - list
   end
 
 end

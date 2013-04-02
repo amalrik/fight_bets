@@ -7,7 +7,7 @@ class EventsController < ApplicationController
     if logged_in?
       @bet = Bet.new
       @bet.user_id = current_user.id
-      @bets = current_user.bets
+      @current_user_bets = current_user.bets.includes(:fight)
     end 
   end
 
