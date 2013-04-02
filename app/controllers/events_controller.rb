@@ -3,12 +3,12 @@ class EventsController < ApplicationController
 
   before_filter :require_login, :except => [:show]
   def index
-    @events = Event.all
+    @events = Event.includes(:fights, {:fights => :bets}, :fights => :result).all
     if logged_in?
       @bet = Bet.new
       @bet.user_id = current_user.id
       @bets = current_user.bets
-    end
+    end 
   end
 
   def show
